@@ -1,10 +1,10 @@
 # LogRocket
 
-Connect ChatGPT and Codex to the hosted LogRocket MCP server for session replay investigations, network debugging, issue triage, and product analytics.
+Connect ChatGPT and Codex to LogRocket to investigate session replays, debug network requests, triage issues, and query product analytics.
 
-The plugin connects to `https://mcp.logrocket.com/mcp` over Streamable HTTP. The server advertises OAuth through its standard authentication challenge and discovery endpoints; use the host's OAuth connection flow. The MCP declaration uses only the portable schema fields and leaves OAuth endpoint discovery to the host. No API key, client secret, local server, or Node dependency is included. OAuth grants access to the same organizations and projects available to the signed-in user.
+The plugin connects to LogRocket's hosted MCP server at `https://mcp.logrocket.com/mcp`. When you install it, sign in to LogRocket through the OAuth prompt; the plugin can then access the same organizations and projects as your LogRocket account. The package contains no credentials and runs nothing locally.
 
-The bundled `use-logrocket` skill routes requests to the available tools and handles project discovery, asynchronous analysis, timezone-aware queries, pagination, and evidence citations. Available tools depend on server deployment and connection scope.
+The bundled `use-logrocket` skill helps the agent pick the right tool for each request, select a project, follow long-running analyses through to completion, handle timezones and pagination, and cite the LogRocket sessions, issues, and metrics behind its answers.
 
 Try:
 
@@ -20,7 +20,7 @@ Edit the server URL in `mcp.json` before installing a customized copy:
 - Organization scope: `https://mcp.logrocket.com/mcp/<organizationID>`
 - Project scope: `https://mcp.logrocket.com/mcp/<organizationID>/<projectID>`
 - Toolsets: `?toolsets=sessions,metrics` (supported: `sessions`, `metrics`, `issues`, `ask-galileo`, `all`)
-- Default metric timezone: `?timezone=America/New_York`
+- Default timezone for time-bucketed results: `?timezone=America/New_York`
 - Combined: `?toolsets=sessions,metrics&timezone=America/New_York`
 
 The default package leaves all tools available and does not set a timezone. Scoped connections hide unneeded discovery tools. Toolset restrictions limit exposed tools; they do not replace server authorization.

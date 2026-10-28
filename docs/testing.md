@@ -2,6 +2,8 @@
 
 Run these checks after installing the plugin and completing LogRocket OAuth. They require access to a LogRocket project with suitable recorded data. Judge each case on live results; do not substitute synthetic data.
 
+The positive and negative cases submitted to OpenAI's review team live in `plugins/logrocket/plugin.json` under `extensions.com.openai.review`. Run those against the reviewer test account before each submission.
+
 | Scenario | Expected behavior |
 | --- | --- |
 | Ask which LogRocket projects are available | Discovers organizations and projects with `list_organizations` and `list_projects`, and asks the user to choose when there are multiple candidates. Scoped connections omit these tools. |

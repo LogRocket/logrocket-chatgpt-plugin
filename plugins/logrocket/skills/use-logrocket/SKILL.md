@@ -1,6 +1,6 @@
 ---
 name: use-logrocket
-description: Investigate LogRocket session replays, user behavior, issues, recorded network requests, and product analytics through the LogRocket MCP server. Use for LogRocket links, user-reported app problems, issue triage, feature usage, and regression investigations grounded in recorded data.
+description: Investigate LogRocket session replays, user behavior, issues, recorded network requests, and product analytics through the LogRocket MCP server. Use when the user shares a LogRocket link, reports a problem in their app, wants to triage issues, asks about feature usage, or wants to check for a regression using recorded data.
 ---
 
 Use the connected LogRocket MCP server. Discover the available tools and their current input schemas before calling them; the exposed tools depend on the connection's scope and toolsets.
