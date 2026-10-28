@@ -1,0 +1,40 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "logrocket",
+  "version": "0.1.0",
+  "description": "Investigate user behavior, session replays, issues, network requests, and product analytics through the LogRocket MCP server.",
+  "author": {
+    "name": "LogRocket",
+    "url": "https://logrocket.com"
+  },
+  "homepage": "https://docs.logrocket.com/docs/mcp",
+  "repository": "https://github.com/LogRocket/logrocket-chatgpt-plugin",
+  "license": "MIT",
+  "keywords": [
+    "logrocket",
+    "mcp",
+    "session-replay",
+    "debugging",
+    "analytics",
+    "galileo"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "LogRocket",
+        "shortDescription": "Debug with session replay",
+        "longDescription": "Connect to LogRocket to investigate user-reported problems, analyze session replays and recorded network requests, triage issues, and query saved metrics or build analytics queries. Includes guidance for selecting projects, following asynchronous analyses, and linking findings to supporting LogRocket evidence. Requires a LogRocket account with access to the relevant projects.",
+        "developerName": "LogRocket",
+        "category": "Developer Tools",
+        "websiteURL": "https://docs.logrocket.com/docs/mcp",
+        "logo": "./assets/logo.png",
+        "composerIcon": "./assets/logo.png",
+        "defaultPrompt": [
+          "Investigate a user-reported problem using LogRocket sessions.",
+          "Triage severe issues in LogRocket from the past week.",
+          "Analyze a saved LogRocket metric and explain the results."
+        ]
+      }
+    }
+  }
+}
