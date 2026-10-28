@@ -25,7 +25,7 @@
         "shortDescription": "Session replay and analytics",
         "longDescription": "Bring LogRocket session replay, issue detection, and product analytics into ChatGPT and Codex. Ask questions in plain language and get answers grounded in your recorded user sessions, with links back to the supporting sessions, issues, and metrics in LogRocket.\n\nUse LogRocket to:\n- Find a user's sessions and walk through what happened when they reported a problem\n- Analyze session replays, console logs, and network requests to pin down the cause of a bug\n- Review and prioritize issues LogRocket has detected, such as JavaScript errors, failed network requests, and rage clicks\n- Answer product questions with session counts, conversion funnels, and breakdowns by browser, country, or page\n- Pull data from saved LogRocket metrics and dashboards\n\nBuilt for engineering, product, design, and support teams that use LogRocket. Requires a LogRocket account, and you can only access the organizations and projects available to that account. The plugin reads and analyzes recorded data; it doesn't change issue triage status, save metrics, or modify your LogRocket settings. Issue search covers the last 30 days.",
         "developerName": "LogRocket",
-        "category": "Developer Tools",
+        "category": "Data & Analytics",
         "capabilities": [
           "Find and analyze session replays",
           "Inspect recorded network requests",
