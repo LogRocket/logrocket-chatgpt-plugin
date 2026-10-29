@@ -51,15 +51,15 @@
           "positive": [
             {
               "description": "Find sessions matching a problem and analyze what happened in one of them.",
-              "prompt": "Find LogRocket sessions from the last 7 days where a user hit a network error, then explain what happened in the most recent one.",
+              "prompt": "Find LogRocket sessions from the last 7 days where a customer's order failed, then explain what happened in the most recent one.",
               "tools_triggered": "list_organizations, list_projects, find_sessions, watch_sessions",
-              "expected_behavior": "Selects the test project (asking if more than one is available), lists matching sessions with links, analyzes one session, and summarizes what the user did and what failed, citing session links or key moments."
+              "expected_behavior": "Selects the test project (asking if more than one is available), lists matching sessions with links, analyzes the most recent one, and summarizes what the customer did and what failed (for example, a payment error on checkout or an order submission that returned a server error), citing session links or key moments."
             },
             {
               "description": "Inspect failed network requests in a recorded session.",
-              "prompt": "Find a LogRocket session from the last 7 days with a failed network request and list the failed requests in it.",
+              "prompt": "Find a LogRocket session from the last 7 days where placing an order failed because of a server error, and list the failed network requests in it.",
               "tools_triggered": "find_sessions, get_network_entries",
-              "expected_behavior": "Finds a matching session, retrieves its network entries filtered to error status codes, and lists each failed request's method, URL, and status with a link to the session. Notes any truncated or omitted data instead of treating it as a bug."
+              "expected_behavior": "Finds a matching session, retrieves its network entries filtered to error status codes, and lists each failed request's method, URL, and status (POST requests to /api/orders returning 500) with a link to the session. Notes any truncated or omitted data instead of treating it as a bug."
             },
             {
               "description": "Triage recent issues detected by LogRocket.",
@@ -69,15 +69,15 @@
             },
             {
               "description": "Answer an aggregate analytics question.",
-              "prompt": "Show LogRocket session counts by browser over the last 30 days.",
+              "prompt": "What percentage of LogRocket sessions that started checkout went on to place an order over the last 30 days?",
               "tools_triggered": "build_metric",
-              "expected_behavior": "Builds a metric for the last 30 days grouped by browser, reports the counts per browser, and states the time range and filters that were used."
+              "expected_behavior": "Builds a conversion funnel from starting checkout to placing an order for the last 30 days, reports the conversion rate and the session counts at each step, and states the time range and events that were used."
             },
             {
               "description": "Run a broad natural language investigation that takes time to complete.",
-              "prompt": "Ask LogRocket which pages had the most rage clicks over the last 14 days and what users were trying to do on them.",
+              "prompt": "Ask LogRocket why customers have been failing to place orders over the last 14 days and how many were affected.",
               "tools_triggered": "use_logrocket",
-              "expected_behavior": "Starts the query, shares progress while it runs, polls with the returned chat ID until it completes, and reports the findings with links to the supporting sessions or metrics."
+              "expected_behavior": "Starts the query, shares progress while it runs, polls with the returned chat ID until it completes, and reports the causes it found with affected session counts and links to the supporting sessions, issues, or metrics."
             }
           ],
           "negative": [
